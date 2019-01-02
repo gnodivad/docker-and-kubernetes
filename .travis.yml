@@ -8,3 +8,13 @@ before_install:
 
 script:
   - docker run davidodw/frontend npm run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-southeast-1"
+  app: "docker-react"
+  env: "DockerReact-env"
+  bucket_name: "elasticbeanstalk-ap-southeast-1-929917414707"
+  bucket_path: "docker-react"
+  on:
+    branch: master
