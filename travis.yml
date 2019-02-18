@@ -1,0 +1,16 @@
+sudo: required
+services:
+    - docker
+
+before_install:
+    - cd fib-calculator
+    - docker build -t davidodw/fib-calculator-client-test -f ./client/Dockerfile.dev ./client
+
+script:
+    - docker run davidodw/fib-calculator-client-test npm test -- --coverage
+
+after_success:
+    - docker build -t davidodw/fib-calculator-client ./client
+    - docker build -t davidodw/fib-calculator-nginx ./nginx
+    - docker build -t davidodw/fib-calculator-server ./server
+    - docker build -t davidodw/fib-calculator-worker ./worker
