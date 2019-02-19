@@ -14,3 +14,9 @@ after_success:
     - docker build -t davidodw/fib-calculator-nginx ./nginx
     - docker build -t davidodw/fib-calculator-server ./server
     - docker build -t davidodw/fib-calculator-worker ./worker
+
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+    - docker push davidodw/fib-calculator-client
+    - docker push davidodw/fib-calculator-nginx
+    - docker push davidodw/fib-calculator-server
+    - docker push davidodw/fib-calculator-worker
