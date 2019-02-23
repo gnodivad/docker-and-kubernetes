@@ -18,6 +18,18 @@
             "image": "davidodw/fib-calculator-worker",
             "hostname": "worker",
             "essential": false
+        },
+        {
+            "name": "nginx",
+            "image": "davidodw/fib-calculator-nginx",
+            "hostname": "nginx",
+            "essential": true,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "containerPort": 80
+                }
+            ]
         }
     ]
 }
