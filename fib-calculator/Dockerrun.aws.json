@@ -4,7 +4,20 @@
         {
             "name": "client",
             "image": "davidodw/fib-calculator-client",
-            "hostname": "client"
+            "hostname": "client",
+            "essential": false
+        },
+        {
+            "name": "server",
+            "image": "davidodw/fib-calculator-server",
+            "hostname": "api",
+            "essential": false
+        },
+        {
+            "name": "worker",
+            "image": "davidodw/fib-calculator-worker",
+            "hostname": "worker",
+            "essential": false
         }
     ]
 }
