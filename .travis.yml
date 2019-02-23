@@ -20,3 +20,16 @@ after_success:
     - docker push davidodw/fib-calculator-nginx
     - docker push davidodw/fib-calculator-server
     - docker push davidodw/fib-calculator-worker
+
+deploy:
+    provider: elasticbeanstalk
+    region: "ap-southeast-1"
+    app: "fib-calculator"
+    env: "FibCalculator-env"
+    bucket_name: "elasticbeanstalk-ap-southeast-1-929917414707"
+    bucket_path: "fib-calculator"
+    on:
+        branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key:
+        secure: $AWS_SECRET_KEY
