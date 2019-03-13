@@ -7,6 +7,6 @@ metadata:
 spec:
     containers:
         - name: client
-          image: davidodw/fib-calculator-client
+          image: davidodw/fib-calculator-worker
           ports:
               - containerPort: 3000
