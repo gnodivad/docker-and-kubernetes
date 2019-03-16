@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: client
-          image: davidodw/fib-calculator-worker
+          image: davidodw/fib-calculator-client
           ports:
             - containerPort: 3000
