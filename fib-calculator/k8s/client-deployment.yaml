@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: deployment
+kind: Deployment
 metadata:
   name: client-deployment
 spec:
@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: client
-          image: davidodw/multi-client
+          image: davidodw/fib-calculator-client
           ports:
           - containerPort: 3000
