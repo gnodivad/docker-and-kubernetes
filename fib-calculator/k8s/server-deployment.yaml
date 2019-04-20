@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: client-deployment
+  name: server-deployment
 spec:
   replicas: 3
   selector:
     matchLabels:
-      component: web
+      component: server
   template:
     metadata:
       labels:
-        component: web
+        component: server
     spec:
       containers:
-        - name: client
-          image: davidodw/fib-calculator-client
+        - name: server
+          image: davidodw/fib-calculator-server
           ports:
-            - containerPort: 3000
+            - containerPort: 5000
