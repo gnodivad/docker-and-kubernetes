@@ -11,8 +11,7 @@ spec:
     metadata:
       labels:
         component: worker
-      spec:
-        containers:
-          - name: worker
-            image: davidodw/fib-calculator-worker
-            
+    spec:
+      containers:
+        - name: worker
+          image: davidodw/fib-calculator-worker
